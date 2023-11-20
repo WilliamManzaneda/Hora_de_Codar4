@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicios</title>
+</head>
+<body>
+    <script>
+
+        // 1. Cadastro de estudantes
+function cadastrarEstudantes() {
+    let estudantes = [];
+    
+    while (true) {
+        let nomeEstudante = prompt("Digite o nome do estudante (ou PARE para encerrar):");
+
+        if (nomeEstudante.toUpperCase() === 'PARE') {
+            break;
+        }
+
+        estudantes.push(nomeEstudante);
+    }
+
+    console.log(`Quantidade de estudantes cadastrados: ${estudantes.length}`);
+    console.log("Lista de estudantes:");
+    estudantes.forEach((estudante, index) => console.log(`${index + 1}. ${estudante}`));
+}
+
+// 2. Verificar planeta na array
+function verificarPlaneta() {
+    const planetas = ["Terra", "Marte", "Plutão", "Vênus", "Júpiter", "Saturno"];
+    let nomePlaneta = prompt("Digite o nome de um planeta:");
+
+    if (planetas.includes(nomePlaneta)) {
+        console.log(`${nomePlaneta} está na lista de planetas.`);
+    } else {
+        console.log(`${nomePlaneta} não está na lista de planetas.`);
+    }
+}
+
+// 3. Lista de compras
+function listaDeCompras() {
+    let frutas = ["Maçã", "Banana", "Uva", "Morango", "Abacaxi"];
+    
+    console.log("Lista de frutas disponíveis:");
+    console.log(frutas);
+
+    while (frutas.length > 0) {
+        let nomeFruta = prompt("Digite o nome de uma fruta para remoção:");
+
+        if (frutas.includes(nomeFruta)) {
+            frutas = frutas.filter(fruta => fruta !== nomeFruta);
+            console.log(`${nomeFruta} foi retirada da lista.`);
+        } else {
+            console.log("Fruta indisponível no nosso mercado.");
+        }
+    }
+
+    console.log("Lista de compras finalizada.");
+}
+
+// Chamar as funções
+cadastrarEstudantes();
+verificarPlaneta();
+listaDeCompras();
+    </script>
+</body>
+</html>
